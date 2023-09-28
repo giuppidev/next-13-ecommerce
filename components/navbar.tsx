@@ -1,18 +1,15 @@
 "use client";
 
 import { Button, Navbar } from "flowbite-react";
+import { GiuppiLogo } from "./logo";
 
 export default function NavbarWithCTAButton() {
   return (
     <Navbar fluid rounded>
       <Navbar.Brand href="https://flowbite-react.com">
-        <img
-          alt="Flowbite React Logo"
-          className="mr-3 h-6 sm:h-9"
-          src="/favicon.svg"
-        />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Flowbite React
+        <GiuppiLogo className="w-64 lg:w-64" />
+        <span className="ml-8 self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+          Next ecommerce
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
