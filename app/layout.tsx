@@ -18,7 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body
+        className={`${roboto.className} min-h-screen grid grid-rows-[auto_1fr_auto]`}
+      >
         <Navbar />
         {children}
         <Footer />
