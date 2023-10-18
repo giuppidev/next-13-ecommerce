@@ -1,3 +1,4 @@
+import { handlePayment } from "@/app/actions";
 import { Product as ProductType } from "@/prisma/generated/client";
 
 interface ProductProps {
@@ -17,7 +18,10 @@ export default function Product({ product }: ProductProps) {
         {product.description}
       </p>
 
-      <button className="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+      <button
+        onClick={() => handlePayment(product.stripePriceId)}
+        className="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+      >
         Choose plan
       </button>
     </div>
