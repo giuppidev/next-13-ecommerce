@@ -1,6 +1,6 @@
 "use client";
 import { handlePayment } from "@/app/actions";
-import { Product as ProductType } from "@/prisma/generated/client";
+import { Product as ProductType } from "@prisma/client";
 import { Button } from "./button";
 import clsx from "clsx";
 

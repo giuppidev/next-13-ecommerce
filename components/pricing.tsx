@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
-import { Product as ProductType } from "@/prisma/generated/client";
+import { Product as ProductType } from "@prisma/client";
 import Product from "./product";
 
 function SwirlyDoodle(props: React.ComponentPropsWithoutRef<"svg">) {
