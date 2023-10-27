@@ -1,15 +1,22 @@
-import Hero from "@/components/hero";
-import Pricing from "@/components/pricing";
+import { Testimonials } from "@/components/testimonials";
+import { Faqs } from "@/components/faqs";
+import { Features } from "@/components/features";
+import { Hero } from "@/components/hero";
+import { Pricing } from "@/components/pricing";
 import { prisma } from "@/lib/prisma";
 import { Product as ProductType } from "@/prisma/generated/client";
+import { normalizeObject } from "@/utils/helper";
 
 export default async function Home() {
   const products: ProductType[] = await prisma.product.findMany();
 
   return (
-    <main className="flex  flex-col items-center justify-between ">
+    <main className="bg-white">
       <Hero />
-      <Pricing products={products} />
+      <Features />
+      <Testimonials />
+      <Pricing products={normalizeObject(products)} />
+      <Faqs />
     </main>
   );
 }

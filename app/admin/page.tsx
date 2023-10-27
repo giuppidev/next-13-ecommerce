@@ -3,7 +3,7 @@ import { Product as ProductType } from "@prisma/client";
 import { revalidatePath, revalidateTag } from "next/cache";
 import ProductActions from "./components/actions";
 
-export const getProducts = async () => {
+const getProducts = async () => {
   return await prisma.product.findMany();
 };
 

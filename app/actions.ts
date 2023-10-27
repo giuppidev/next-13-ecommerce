@@ -2,10 +2,9 @@
 
 import { redirect } from "next/navigation";
 import { getURL } from "@/utils/helper";
-import getStripe from "@/utils/stripe";
+import { stripe } from "@/utils/stripe";
 
 export async function handlePayment(stripePriceId: string) {
-  const stripe = await getStripe();
   const session = await stripe.checkout.sessions.create({
     shipping_address_collection: { allowed_countries: ["IT"] },
     line_items: [
